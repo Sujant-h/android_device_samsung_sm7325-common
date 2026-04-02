@@ -1,0 +1,33 @@
+# All unpinned blobs are extracted from the release mentioned in proprietary-files.txt
+
+# Camera Firmware
+vendor/firmware/multical.bin
+
+# GPS
+vendor/etc/izat.conf
+
+# HotwordEnrollment
+product/priv-app/HotwordEnrollmentOKGoogleEx3HEXAGON/HotwordEnrollmentOKGoogleEx3HEXAGON.apk
+product/priv-app/HotwordEnrollmentXGoogleEx3HEXAGON/HotwordEnrollmentXGoogleEx3HEXAGON.apk
+
+# RIL
+vendor/bin/hw/rild
+vendor/etc/locale/plmn_delta_eng.bin
+vendor/etc/plmn_delta_hktw.bin
+vendor/etc/plmn_se13_prebuilt.bin
+vendor/etc/mtu-conf.xml
+vendor/lib64/libsec-ril.so|78be1ce841e24e81c3c7ff60fd3bca7e98fdfe85|f0084fffefc72868fcd0cf8ce2a6f63f2a809079
+vendor/lib64/libril_sem.so
+vendor/lib64/libVendorSemTelephonyProps.so
+vendor/lib64/libVendorSemDataProps.so
+vendor/etc/plmn_delta_usagsm.bin
+vendor/etc/plmn_delta.bin
+vendor/etc/locale/plmn_delta_zh-rCN.bin
+vendor/etc/locale/plmn_delta_zh-rTW.bin
+vendor/etc/locale/plmn_delta_zh-rHK.bin
+vendor/etc/plmn_delta_attaio.bin
+vendor/etc/sec_config_oem
+vendor/etc/pdpcnt-conf.xml
+vendor/lib64/vendor.samsung.hardware.radio.bridge@2.0.so
+vendor/lib64/vendor.samsung.hardware.radio.bridge@2.1.so
+vendor/lib64/vendor.samsung.hardware.radio.channel@2.0.so
