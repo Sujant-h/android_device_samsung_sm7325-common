@@ -57,18 +57,22 @@ void vendor_load_properties()
         }
     }
 
-    if (device.size() == 0) {
-        LOG(ERROR) << "Could not detect device, forcing a52sxq";
-        device = "a52sxq";
+    LOG(INFO) << "Found bootloader: " << bootloader;
+
+    if (device.empty()) {
+        // Keep the values of the build: they belong to the device the build
+        // was made for, while a hardcoded fallback would load the init
+        // scripts and props of another device.
+        LOG(ERROR) << "Unknown model " << model << ", keeping build properties";
+        return;
     }
 
     name = device + "xx";
 
-    LOG(INFO) << "Found bootloader: %s", bootloader.c_str();
-    LOG(INFO) << "Setting ro.product.model: %s", model.c_str();
-    LOG(INFO) << "Setting ro.product.device: %s", device.c_str();
-    LOG(INFO) << "Setting ro.product.name: %s", name.c_str();
-    LOG(INFO) << "Setting ro.build.product: %s", device.c_str();
+    LOG(INFO) << "Setting ro.product.model: " << model;
+    LOG(INFO) << "Setting ro.product.device: " << device;
+    LOG(INFO) << "Setting ro.product.name: " << name;
+    LOG(INFO) << "Setting ro.build.product: " << device;
 
     property_override_quad("ro.product.model", "ro.product.vendor.model", "ro.product.product.model", "ro.product.odm.model", model.c_str());
     property_override_quad("ro.product.device", "ro.product.vendor.device", "ro.product.product.device", "ro.product.odm.device", device.c_str());
